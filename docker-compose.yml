@@ -1,0 +1,23 @@
+services:
+        db:
+            image: postgres:16
+            container_name: leadmgm-db
+            restart: unless-stopped
+            environment:
+              POSTGRES_USER: leadmgm
+              POSTGRES_PASSWORD: leadmgm4518
+              POSTGRES_DB: leadDB
+            ports:
+              - "5435:5432"
+            volumes:
+              - pgdata:/var/lib/postgresql/data
+            healthcheck:
+              test: ["CMD-SHELL", "pg_isready -U leadmgm -d leadDB"]
+              interval: 5s
+              timeout: 3s
+              retries: 5
+
+volumes:
+        pgdata:
+
+
