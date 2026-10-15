@@ -8,18 +8,24 @@ import { useDebouncedValue } from "@/hooks/useDebouncedValue";
 import { useLeads } from "@/hooks/useLeads";
 import { LeadTimelineDialog } from "@/components/LeadTimelineDialog";
 import type { Lead, LeadStatus } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import { AddLeadDialog } from "@/components/AddLeadDialog";
 
 
 export default function Page() {
   const [status, setStatus] = useState<LeadStatus | undefined>(undefined);
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState<Lead | null>(null);
+  const [addOpen, setAddOpen] = useState(false);
   const q = useDebouncedValue(search.trim());
   const { leads, loading, error, refresh } = useLeads(status, q || undefined);
 
   return (
     <main className="mx-auto max-w-3xl space-y-4 p-6">
-      <h1 className="text-2xl font-semibold">LeadFlow</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-semibold">LeadFlow</h1>
+        <Button onClick={() => setAddOpen(true)}>Add lead</Button>
+    </div>
 
       <SearchBar value={search} onChange={setSearch} />
       <StatusFilter value={status} onChange={setStatus} />
@@ -34,6 +40,11 @@ export default function Page() {
           lead={selected}
           onClose={() => setSelected(null)}
           onChanged={refresh}
+        />
+        <AddLeadDialog
+          open={addOpen}
+          onClose={() => setAddOpen(false)}
+          onCreated={refresh}
         />
     </main>
   );
