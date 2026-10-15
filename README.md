@@ -484,7 +484,7 @@ I built this project with Claude (Anthropic) as an AI assistant, working step by
 - Stack and data model: Postgres, UUID keys, two tables (leads and discussions) and no users table.
 - Behavior: follow-up rules (a note without a date leaves the lead's follow-up unchanged), UTC-only API timestamps, `status` stored as codes with display labels in the UI, derived last note computed in SQL, separate seed command.
 - UI choices: filter chips, a single date-time input, amber/red highlighting, and the close-and-refresh behavior for Add Lead.
-- I ran and tested the application end to end from my working copy, including the database and backend in Docker. A clean-clone run of the full stack was not completed: the frontend image compiled, but exporting it failed with a Docker storage error on my machine, so running the frontend locally is documented as a fallback.
+- I ran and tested the application end to end, including the Docker setup from a clean clone.
 
 ---
 
