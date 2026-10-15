@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { LeadList } from "@/components/ui/LeadList";
-import { SearchBar } from "@/components/ui/SearchBar";
-import { StatusFilter } from "@/components/ui/StatusFilter";
+import { LeadList } from "@/components/LeadList";
+import { SearchBar } from "@/components/SearchBar";
+import { StatusFilter } from "@/components/StatusFilter";
 import { useDebouncedValue } from "@/hooks/useDebouncedValue";
 import { useLeads } from "@/hooks/useLeads";
-import { LeadTimelineDialog } from "@/components/ui/LeadTimelineDialog";
+import { LeadTimelineDialog } from "@/components/LeadTimelineDialog";
 import type { Lead, LeadStatus } from "@/lib/types";
 
 
