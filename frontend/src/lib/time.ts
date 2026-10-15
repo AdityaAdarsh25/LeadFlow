@@ -25,3 +25,11 @@ export function formatFollowUp(iso: string): string {
     minute: "2-digit",
   });
 }
+export function formatDateTime(iso: string): string {
+  return new Date(iso).toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
