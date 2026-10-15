@@ -27,10 +27,10 @@ export interface Discussion {
 }
 
 export const STATUS_LABELS: Record<LeadStatus, string> = {
-  new: "New",
-  contacted: "Contacted",
-  qualified: "Qualified",
-  proposal_sent: "proposal_sent",
-  won: "won",
-  lost: "lost"
+  new: "NEW",
+  contacted: "CONTACTED",
+  qualified: "QUALIFIED",
+  proposal_sent: "PROPOSAL SENT",
+  won: "WON",
+  lost: "LOST"
 };
