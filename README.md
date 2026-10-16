@@ -38,6 +38,14 @@ Managing sales pipelines across spreadsheets leads to dropped deals and missed c
 
 ---
 
+## 🎬 Demo
+
+**Video walkthrough (about 2 minutes):** [Watch on YouTube]([https://youtu.be/LBZsjoe7-Ew])
+
+**Screenshots:** [screenshots/](screenshots/)
+
+---
+
 ## ✨ Key Features
 
 - **Pipeline Stages**: `NEW` &rarr; `CONTACTED` &rarr; `QUALIFIED` &rarr; `PROPOSAL_SENT` &rarr; `WON` &rarr; `LOST`
